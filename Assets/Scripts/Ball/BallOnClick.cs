@@ -6,8 +6,15 @@ namespace TheCircleHunter
     [RequireComponent(typeof(Collider2D))]
 	public class BallOnClick : MonoBehaviour
     {
-        void OnMouseDown()
+		[Header("Values")]
+		[SerializeField] int valueInPoints;
+
+
+
+		void OnMouseDown()
 		{
+			ScoreSingleton.GetInstance().AddScore(valueInPoints);
+
             Destroy(gameObject);
 		}
 	}

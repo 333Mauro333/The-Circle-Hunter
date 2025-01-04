@@ -63,8 +63,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.27f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BallMovement.cs" />
-    <Compile Include="Assets\Scripts\BallOnClick.cs" />
+    <Compile Include="Assets\Scripts\Ball\BallMovement.cs" />
+    <Compile Include="Assets\Scripts\Ball\BallOnClick.cs" />
+    <Compile Include="Assets\Scripts\Singletons\ScoreSingleton.cs" />
+    <Compile Include="Assets\Scripts\HUD\HUDPoints.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
