@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TheCircleHunter
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Ball : MonoBehaviour
+    public class BallMovement : MonoBehaviour
     {
         [Header("Values")]
         [SerializeField] float inicialSpeed;
