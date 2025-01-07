@@ -14,7 +14,6 @@ namespace TheCircleHunter
 
 
 
-
 		void OnMouseDown()
 		{
 			if (!TimeSingleton.GetInstance().IsTheTimeOver())

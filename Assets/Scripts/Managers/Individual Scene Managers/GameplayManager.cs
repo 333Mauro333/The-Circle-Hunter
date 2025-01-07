@@ -8,7 +8,6 @@ namespace TheCircleHunter
     public class GameplayManager : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] TextMeshProUGUI timeText;
         [SerializeField] GameObject panelGameOver;
         [SerializeField] TextMeshProUGUI scoreNumberText;
 

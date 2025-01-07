@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1720165131819437999}
   - component: {fileID: 1669776205388235755}
   - component: {fileID: 6505762077167827610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Big Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb56420b30020ab4c8a2c3c4e3abb2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inicialSpeed: 0
+  initialSpeed: 0
   initialAngle: 0
 --- !u!114 &6505762077167827610
 MonoBehaviour:
@@ -177,3 +177,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueInPoints: 10
+  bm: {fileID: 0}
