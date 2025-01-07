@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Singletons\TimeSingleton.cs" />
     <Compile Include="Assets\Scripts\Ball\BallOnClick.cs" />
     <Compile Include="Assets\Scripts\Managers\Individual Scene Managers\GameplayManager.cs" />
+    <Compile Include="Assets\Scripts\Ball\BallBorderConfiguration.cs" />
     <Compile Include="Assets\Scripts\SceneManagerForButtons.cs" />
     <Compile Include="Assets\Scripts\Singletons\ScoreSingleton.cs" />
     <Compile Include="Assets\Scripts\Managers\Individual Scene Managers\MainMenuManager.cs" />
