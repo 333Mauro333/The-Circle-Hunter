@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810f0a76edbfe6a478bba22fb7e7e4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialTime: 30
   isDiscounting: 0
 --- !u!4 &681012298
 Transform:

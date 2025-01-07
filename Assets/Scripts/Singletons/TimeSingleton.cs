@@ -9,12 +9,13 @@ namespace TheCircleHunter
 	{
 		static TimeSingleton instance;
 
+		[SerializeField] float initialTime;
+
 		public event Action<float> OnTimeChanged;
 		public event Action OnTimeFinished;
 
 		public bool isDiscounting;
-		float initialTime;
-		float time;
+		float actualTime;
 		int intTime;
 
 
@@ -40,10 +41,10 @@ namespace TheCircleHunter
 			{
 				int actualIntTime = 0;
 
-				time -= Time.deltaTime;
-				actualIntTime = (int)Math.Floor(time);
+				actualTime -= Time.deltaTime;
+				actualIntTime = (int)Math.Floor(actualTime);
 
-				if (time >= 10.0f)
+				if (actualTime >= 10.0f)
 				{
 					if (intTime != actualIntTime)
 					{
@@ -53,15 +54,15 @@ namespace TheCircleHunter
 				}
 				else
 				{
-					if (time <= 0.0f)
+					if (actualTime <= 0.0f)
 					{
-						time = 0.0f;
+						actualTime = 0.0f;
 						isDiscounting = false;
 
 						OnTimeFinished?.Invoke();
 					}
 
-					OnTimeChanged?.Invoke(time);
+					OnTimeChanged?.Invoke(actualTime);
 				}
 			}
 		}
@@ -73,9 +74,16 @@ namespace TheCircleHunter
 			return instance;
 		}
 
+		public float GetActualTime()
+		{
+			return actualTime;
+		}
+
 		public void AddTime(float seconds)
 		{
-			time += seconds;
+			actualTime += seconds;
+
+			OnTimeChanged?.Invoke(actualTime);
 		}
 		public void StartCountDown()
 		{
@@ -87,20 +95,21 @@ namespace TheCircleHunter
 		}
 		public void ResetTime()
 		{
-			time = initialTime;
+			actualTime = initialTime;
+
+			OnTimeChanged?.Invoke(actualTime);
 		}
 
 		public bool IsTheTimeOver()
 		{
-			return time <= 0.0f;
+			return actualTime <= 0.0f;
 		}
 
 		void InitializeVariables()
 		{
 			isDiscounting = false;
-			initialTime = 20.0f;
-			time = initialTime;
-			intTime = (int)time;
+			actualTime = initialTime;
+			intTime = (int)actualTime;
 		}
 	}
 }

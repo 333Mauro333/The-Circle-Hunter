@@ -8,6 +8,7 @@ namespace TheCircleHunter
     public class GameplayManager : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] TextMeshProUGUI timeText;
         [SerializeField] GameObject panelGameOver;
         [SerializeField] TextMeshProUGUI scoreNumberText;
 
@@ -15,7 +16,7 @@ namespace TheCircleHunter
 
         void Start()
         {
-            TimeSingleton.GetInstance().OnTimeFinished += ActivateObjects;
+            TimeSingleton.GetInstance().OnTimeFinished += ActivateObject;
 			TimeSingleton.GetInstance().OnTimeFinished += SetScoreInText;
 
             TimeSingleton.GetInstance().ResetTime();
@@ -24,13 +25,13 @@ namespace TheCircleHunter
 
 		void OnDestroy()
 		{
-			TimeSingleton.GetInstance().OnTimeFinished -= ActivateObjects;
+			TimeSingleton.GetInstance().OnTimeFinished -= ActivateObject;
 			TimeSingleton.GetInstance().OnTimeFinished -= SetScoreInText;
 		}
 
 
 
-		void ActivateObjects()
+		void ActivateObject()
         {
             panelGameOver.SetActive(true);
 		}
