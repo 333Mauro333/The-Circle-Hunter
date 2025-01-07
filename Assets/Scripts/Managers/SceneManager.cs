@@ -42,10 +42,6 @@ namespace TheCircleHunter
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
         }
-		public void LoadGameOverScene()
-		{
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Game Over");
-		}
 		public void QuitGame()
 		{
 #if UNITY_EDITOR

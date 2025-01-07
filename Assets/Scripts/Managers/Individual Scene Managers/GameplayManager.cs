@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using TMPro;
+
 
 namespace TheCircleHunter
 {
@@ -7,24 +9,34 @@ namespace TheCircleHunter
     {
         [Header("References")]
         [SerializeField] GameObject panelGameOver;
+        [SerializeField] TextMeshProUGUI scoreNumberText;
 
 
 
         void Start()
         {
-            TimeSingleton.GetInstance().OnTimeFinished += ActivateObject;
-        }
+            TimeSingleton.GetInstance().OnTimeFinished += ActivateObjects;
+			TimeSingleton.GetInstance().OnTimeFinished += SetScoreInText;
+
+            TimeSingleton.GetInstance().ResetTime();
+            ScoreSingleton.GetInstance().ResetScore();
+		}
 
 		void OnDestroy()
 		{
-			TimeSingleton.GetInstance().OnTimeFinished -= ActivateObject;
+			TimeSingleton.GetInstance().OnTimeFinished -= ActivateObjects;
+			TimeSingleton.GetInstance().OnTimeFinished -= SetScoreInText;
 		}
 
 
 
-		void ActivateObject()
+		void ActivateObjects()
         {
             panelGameOver.SetActive(true);
 		}
+        void SetScoreInText()
+        {
+            scoreNumberText.text = ScoreSingleton.GetInstance().GetScore().ToString();
+        }
     }
 }

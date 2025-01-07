@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.35
+  m_fontSize: 39.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -546,8 +546,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1822601694}
-        m_TargetAssemblyTypeName: TheCircleHunter.MainMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1418070147}
+        m_TargetAssemblyTypeName: TheCircleHunter.SceneManagerForButtons, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -596,6 +596,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053151912}
   m_CullTransparentMesh: 1
+--- !u!1001 &1418070146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377768479902147763, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642118039696358179, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+      propertyPath: m_Name
+      value: Scene Manager For Buttons
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+--- !u!114 &1418070147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 754278132942847033, guid: c405eac8720877f4d9616e0deccd7f0a, type: 3}
+  m_PrefabInstance: {fileID: 1418070146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5287c89b2265a3647b89c534f721f86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1588069629
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +985,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.35
+  m_fontSize: 39.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1050,8 +1118,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1822601694}
-        m_TargetAssemblyTypeName: TheCircleHunter.MainMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1418070147}
+        m_TargetAssemblyTypeName: TheCircleHunter.SceneManagerForButtons, Assembly-CSharp
         m_MethodName: LoadGameplayScene
         m_Mode: 1
         m_Arguments:
@@ -1107,3 +1175,4 @@ SceneRoots:
   - {fileID: 1724996810}
   - {fileID: 1588069630}
   - {fileID: 1822601693}
+  - {fileID: 1418070146}

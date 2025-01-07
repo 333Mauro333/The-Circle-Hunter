@@ -18,19 +18,22 @@ namespace TheCircleHunter
 
         void Awake()
         {
-            direction = new Vector2();
+			float angleInRadians = initialAngle * Mathf.Deg2Rad;
 
-            rb = GetComponent<Rigidbody2D>();
-        }
+			direction = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
+			direction.Normalize();
 
-        void Start()
+			rb = GetComponent<Rigidbody2D>();
+			rb.AddForce(direction * inicialSpeed);
+		}
+
+
+
+        public void StopMovement()
         {
-            float angleInRadians = initialAngle * Mathf.Deg2Rad;
-
-            direction = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
-            direction.Normalize();
-
-            rb.AddForce(direction * inicialSpeed);
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0.0f;
+            rb.isKinematic = true;
         }
     }
 }

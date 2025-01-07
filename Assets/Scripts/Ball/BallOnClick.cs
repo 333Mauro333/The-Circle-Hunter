@@ -9,13 +9,29 @@ namespace TheCircleHunter
 		[Header("Values")]
 		[SerializeField] int valueInPoints;
 
+		[Header("References")]
+		[SerializeField] BallManager bm;
+
+
 
 
 		void OnMouseDown()
 		{
-			ScoreSingleton.GetInstance().AddScore(valueInPoints);
+			if (!TimeSingleton.GetInstance().IsTheTimeOver())
+			{
+				ScoreSingleton.GetInstance().AddScore(valueInPoints);
 
-            Destroy(gameObject);
+				bm.RemoveBallFromList(gameObject);
+
+				Destroy(gameObject);
+			}
+		}
+
+
+
+		public void SetBallManager(BallManager ballManager)
+		{
+			bm = ballManager;
 		}
 	}
 }

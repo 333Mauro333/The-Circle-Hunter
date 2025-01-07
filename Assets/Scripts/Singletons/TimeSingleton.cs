@@ -87,7 +87,12 @@ namespace TheCircleHunter
 		}
 		public void ResetTime()
 		{
-			time = 60.0f;
+			time = initialTime;
+		}
+
+		public bool IsTheTimeOver()
+		{
+			return time <= 0.0f;
 		}
 
 		void InitializeVariables()
