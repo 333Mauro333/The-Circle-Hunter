@@ -12,6 +12,7 @@ namespace TheCircleHunter
 		public event Action<int> OnScoreChanged;
 
         int score;
+		int highscore;
 
 
 
@@ -23,6 +24,7 @@ namespace TheCircleHunter
 				DontDestroyOnLoad(gameObject);
 
 				score = 0;
+				highscore = 0;
 			}
 			else
 			{
@@ -42,15 +44,27 @@ namespace TheCircleHunter
 			score += scoreToAdd;
 			OnScoreChanged?.Invoke(score);
 		}
+		public void SaveHighscore()
+		{
+			highscore = score;
+		}
 		public void ResetScore()
 		{
 			score = 0;
 			OnScoreChanged?.Invoke(score);
 		}
+		public void ResetHighscore()
+		{
+			highscore = 0;
+		}
 
 		public int GetScore()
 		{
 			return score;
+		}
+		public int GetHighscore()
+		{
+			return highscore;
 		}
 	}
 }

@@ -10,15 +10,17 @@ namespace TheCircleHunter
         [Header("References")]
 		[SerializeField] GameObject panelGameOver;
         [SerializeField] TextMeshProUGUI scoreNumberText;
+		[SerializeField] TextMeshProUGUI highscoreNumberText;
 
 
 
-        void Start()
+		void Start()
         {
             TimeSingleton.GetInstance().OnTimeFinished += ActivateObject;
 			TimeSingleton.GetInstance().OnTimeFinished += SetScoreInText;
+			TimeSingleton.GetInstance().OnTimeFinished += SaveAndSetHighscoreInText;
 
-            TimeSingleton.GetInstance().ResetTime();
+			TimeSingleton.GetInstance().ResetTime();
             ScoreSingleton.GetInstance().ResetScore();
 		}
 
@@ -26,6 +28,7 @@ namespace TheCircleHunter
 		{
 			TimeSingleton.GetInstance().OnTimeFinished -= ActivateObject;
 			TimeSingleton.GetInstance().OnTimeFinished -= SetScoreInText;
+			TimeSingleton.GetInstance().OnTimeFinished -= SaveAndSetHighscoreInText;
 		}
 
 
@@ -38,5 +41,14 @@ namespace TheCircleHunter
         {
             scoreNumberText.text = ScoreSingleton.GetInstance().GetScore().ToString();
         }
-    }
+		void SaveAndSetHighscoreInText()
+		{
+			if (ScoreSingleton.GetInstance().GetScore() > ScoreSingleton.GetInstance().GetHighscore())
+			{
+				ScoreSingleton.GetInstance().SaveHighscore();
+			}
+
+			highscoreNumberText.text = ScoreSingleton.GetInstance().GetHighscore().ToString();
+		}
+	}
 }
