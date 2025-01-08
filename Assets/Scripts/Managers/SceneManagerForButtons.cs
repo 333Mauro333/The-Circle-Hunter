@@ -24,6 +24,10 @@ namespace TheCircleHunter
 		{
 			SceneManager.GetInstance().LoadGameplayScene();
 		}
+		public void LoadUpgradesScene()
+		{
+			SceneManager.GetInstance().LoadUpgradesScene();
+		}
 		public void QuitGame()
 		{
 			SceneManager.GetInstance().QuitGame();

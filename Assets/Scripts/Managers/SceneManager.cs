@@ -42,6 +42,10 @@ namespace TheCircleHunter
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
         }
+		public void LoadUpgradesScene()
+		{
+			UnityEngine.SceneManagement.SceneManager.LoadScene("Upgrades");
+		}
 		public void QuitGame()
 		{
 #if UNITY_EDITOR
