@@ -3,15 +3,17 @@ using UnityEngine;
 
 namespace TheCircleHunter
 {
-    public class SceneManagerForButtons : MonoBehaviour
+    public class SingletonReferencesForButtons : MonoBehaviour
     {
 		SceneManager sceneManager;
+		TimeSingleton timeSingleton;
 
 
 
 		void Start()
 		{
 			sceneManager = GameObject.FindWithTag("SceneManager").GetComponent<SceneManager>();
+			timeSingleton = GameObject.FindWithTag("TimeSingleton").GetComponent<TimeSingleton>();
 		}
 
 
@@ -31,6 +33,11 @@ namespace TheCircleHunter
 		public void QuitGame()
 		{
 			SceneManager.GetInstance().QuitGame();
+		}
+
+		public void StartCountdown()
+		{
+			timeSingleton.StartCountdown();
 		}
 	}
 }

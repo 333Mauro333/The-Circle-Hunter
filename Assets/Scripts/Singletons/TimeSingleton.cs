@@ -85,7 +85,7 @@ namespace TheCircleHunter
 
 			OnTimeChanged?.Invoke(actualTime);
 		}
-		public void StartCountDown()
+		public void StartCountdown()
 		{
 			isDiscounting = true;
 		}

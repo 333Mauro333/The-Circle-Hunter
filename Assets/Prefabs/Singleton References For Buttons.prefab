@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2377768479902147763}
   - component: {fileID: 754278132942847033}
   m_Layer: 0
-  m_Name: Scene Manager For Buttons
+  m_Name: Singleton References For Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
