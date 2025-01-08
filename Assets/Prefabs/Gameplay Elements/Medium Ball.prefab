@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.2509804, g: 0.26666668, b: 0.7137255, a: 1}
+  m_Color: {r: 0.5245282, g: 0.41765952, b: 0.16923456, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1669776205388235755}
   - component: {fileID: 6505762077167827610}
   m_Layer: 6
-  m_Name: Big Ball
+  m_Name: Medium Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2105353945702429153}
@@ -274,5 +274,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbcd8397cf91274dbaab1ee8fdbd0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueInPoints: 5
+  valueInPoints: 10
   bm: {fileID: 0}

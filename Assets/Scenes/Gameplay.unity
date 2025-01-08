@@ -157,13 +157,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de882e105411f1438dc703a849bf0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAppearingTheBalls: 0
   ballList: []
   minBallsOnScreen: 5
-  maxBallsOnScreen: 10
+  maxBallsOnScreen: 15
   timeBetweenBallsAparitionNormal: 1
-  timeBetweenBallsAparitionUnderMin: 0.2
+  timeBetweenBallsAparitionUnderMin: 0.1
   prefabBigBall: {fileID: 142159889375676846, guid: 963aaf1eca00cde4b80f78ae6825e30b, type: 3}
+  prefabMediumBall: {fileID: 142159889375676846, guid: 2d9d3690a43413641a1ed2c86b781f15, type: 3}
   wallUp: {fileID: 8111591}
   wallDown: {fileID: 369249473}
   wallLeft: {fileID: 2080394976}

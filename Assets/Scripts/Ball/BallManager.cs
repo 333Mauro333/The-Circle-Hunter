@@ -7,9 +7,7 @@ namespace TheCircleHunter
 {
     public class BallManager : MonoBehaviour
     {
-		[Header("Values")]
-		[SerializeField] bool isAppearingTheBalls;
-		[Space(10)]
+		[Header("Values")]		
 		[SerializeField] List<GameObject> ballList;
         [Space(10)]
         [SerializeField] int minBallsOnScreen;
@@ -20,6 +18,7 @@ namespace TheCircleHunter
 
 		[Header("References")]
 		[SerializeField] GameObject prefabBigBall;
+		[SerializeField] GameObject prefabMediumBall;
 		[Space(10)]
         [SerializeField] Transform wallUp;
 		[SerializeField] Transform wallDown;
@@ -27,7 +26,9 @@ namespace TheCircleHunter
 		[SerializeField] Transform wallRight;
         [SerializeField] GameObject ballsContainer;
 
-        float timerNormal;
+		bool isAppearingTheBalls;
+
+		float timerNormal;
         float timerUnderMin;
         
 
@@ -54,7 +55,7 @@ namespace TheCircleHunter
 
                     if (timerUnderMin <= 0.0f)
                     {
-						CreateBigBall();
+						CreateBall();
 
                         timerUnderMin = timeBetweenBallsAparitionUnderMin;
 					}
@@ -65,7 +66,7 @@ namespace TheCircleHunter
 
 					if (timerNormal <= 0.0f)
 					{
-						CreateBigBall();
+						CreateBall();
 
 						timerNormal = timeBetweenBallsAparitionNormal;
 					}
@@ -103,28 +104,39 @@ namespace TheCircleHunter
             ballList.Remove(ballObject);
         }
 
-        void CreateBigBall()
+        void CreateBall()
         {
-			GameObject createdBigBall = Instantiate(prefabBigBall);
-            BallMovement ballMovementScript = createdBigBall.GetComponent<BallMovement>();
-            BallOnClick ballOnClickScript = createdBigBall.GetComponent<BallOnClick>();
+            GameObject createdBall = null;
+			int randomPercentage = Random.Range(1, 101);
+
+            if (randomPercentage >= 1 && randomPercentage <= 50)
+            {
+				createdBall = Instantiate(prefabBigBall);
+			}
+			else if (randomPercentage >= 51 && randomPercentage <= 100)
+			{
+				createdBall = Instantiate(prefabMediumBall);
+			}
+			
+            BallMovement ballMovementScript = createdBall.GetComponent<BallMovement>();
+            BallOnClick ballOnClickScript = createdBall.GetComponent<BallOnClick>();
 
             float minX = wallLeft.position.x + wallLeft.localScale.x / 2.0f +
-                         createdBigBall.transform.localScale.x / 2.0f;
+						 createdBall.transform.localScale.x / 2.0f;
 			float maxX = wallRight.position.x - wallRight.localScale.x / 2.0f -
-						 createdBigBall.transform.localScale.x / 2.0f;
+						 createdBall.transform.localScale.x / 2.0f;
 			float minY = wallDown.position.y + wallDown.localScale.y / 2.0f +
-						 createdBigBall.transform.localScale.y / 2.0f;
+						 createdBall.transform.localScale.y / 2.0f;
             float maxY = wallUp.position.y - wallUp.localScale.y / 2.0f -
-                         createdBigBall.transform.localScale.y / 2.0f;
+						 createdBall.transform.localScale.y / 2.0f;
 
-            createdBigBall.transform.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
-            createdBigBall.transform.parent = ballsContainer.transform;
+			createdBall.transform.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
+			createdBall.transform.parent = ballsContainer.transform;
             ballMovementScript.SetDirection(Random.Range(0.0f, 360.0f));
-            ballMovementScript.SetSpeed(Random.Range(150.0f, 1000.0f));
+            ballMovementScript.SetSpeed(Random.Range(150.0f, 500.0f));
             ballOnClickScript.SetBallManager(this);
 
-			ballList.Add(createdBigBall);
+			ballList.Add(createdBall);
 		}
     }
 }
